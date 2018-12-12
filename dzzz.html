@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		nav a {
+			margin: 0 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<ul>
+		<li>
+			<a href="http://www.google.com">One</a>
+		</li>
+		<li>
+			<a href="http://www.yahoo.com">Two</a>
+		</li>
+		<li>
+			<a href="http://www.yandex.com">Three</a>
+		</li>
+		<li>
+			<a href="https://www.who.int">Four</a>
+		</li>
+	</ul>
+	
+
+	<script type="text/javascript">
+
+	function findLinks(linkOne,linkTwo){	
+		
+		var aLink = document.getElementsByTagName("a");
+		for(var i = 0; i < aLink.length; i++){
+			
+			if(linkOne == aLink[i].href){
+				var parentLi = aLink[i].parentNode;
+				var nextLi = parentLi.previousElementSibling;
+				var linkFromNextLi = nextLi.childNodes[1];
+				linkFromNextLi.href = linkTwo;
+			}
+		}
+	
+	}
+
+
+	findLinks("http://www.yahoo.com/","http://www.bbc.com/");
+
+
+	/*var aLink = document.getElementsByTagName("a");
+	
+	var linkOne = "http://www.yahoo.com/";
+	var linkTwo = "http://www.bbc.com/";
+
+	for(var i = 0; i < aLink.length; i++){
+		
+		if(linkOne == aLink[i].href){
+			var parentLi = aLink[i].parentNode;
+			var nextLi = parentLi.nextElementSibling;
+			var linkFromNextLi = nextLi.childNodes[1];
+			linkFromNextLi.href = linkTwo;
+			
+			//nextLi.textContent = "Booooo";
+		}
+	}
+	
+	console.log(linkFromNextLi);*/
+	
+
+
+	</script>
+
+</body>
+
+
+</html>
