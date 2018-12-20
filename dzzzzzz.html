@@ -43,7 +43,7 @@ for(var i = 0; i < myLis.length; i++){
 function createNote(){
 	var text = input.value;
 	
-	if(text){
+	if(text && validElems()){
 		var newLi = document.createElement("li");
 		newLi.textContent = text;
 		list.appendChild(newLi);
