@@ -43,13 +43,11 @@ for(var i = 0; i < myLis.length; i++){
 function createNote(){
 	var text = input.value;
 	
-	if(text.length < 50){
+	if(text){
 		var newLi = document.createElement("li");
 		newLi.textContent = text;
 		list.appendChild(newLi);
 		input.value = "";
-	} else if(text.length > 50){
-		input.style.backgroundColor = "red";
 	}
 
 	
