@@ -56,16 +56,14 @@ function createNote(){
 };
 btn.onclick = createNote;
 
-input.onkeypress = function(){
+
+input.onkeypress = function(e){
+	
 	if(text.length > 50){
 		input.style.backgroundColor = "red";
 	}else{
 		input.style.backgroundColor = "";
 	}
-}
-
-input.onkeypress = function(e){
-	
 	var keyPressed = e.keyCode;
 	if ((keyPressed == 10 || keyPressed == 13) && event.ctrlKey)
 	{
