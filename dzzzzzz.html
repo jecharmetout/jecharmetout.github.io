@@ -38,7 +38,7 @@ for(var i = 0; i < myLis.length; i++){
 		}
 		e.target.style.backgroundColor = "red";
 	}
-}
+};
 		
 function createNote(){
 	var text = input.value;
@@ -52,21 +52,24 @@ function createNote(){
 
 	
 };
+
+function validElems(){
+	var text = input.value;
+	if(text.length <= 50){
+		input.style.backgroundColor = "none";
+	}else{
+		input.style.backgroundColor = "red";
+	}	
+	return text.length <= 50
+};
+
 btn.onclick = createNote;
 
-
 input.onkeypress = function(e){
-	var text = e.target.value;
-	if(text.length <= 50){
-			input.style.backgroundColor = "none";
-		}else{
-		 input.style.backgroundColor = "red";
-		 }	
 		var keyPressed = e.keyCode;
-		if ((keyPressed == 10 || keyPressed == 13) && event.ctrlKey && text.length < 50)
+		if ((keyPressed == 10 || keyPressed == 13) && event.ctrlKey)
 		{ 
 			createNote();
-			
 		} 
 	
 };
