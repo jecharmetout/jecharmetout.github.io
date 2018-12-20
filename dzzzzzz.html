@@ -57,15 +57,16 @@ btn.onclick = createNote;
 
 input.onkeypress = function(e){
 	var text = input.value;
-	
+		
 		var keyPressed = e.keyCode;
 		if ((keyPressed == 10 || keyPressed == 13) && event.ctrlKey && text.length < 50)
-		{
+		{ 
 			createNote();
+			input.style.backgroundColor = "";
 		} else if(text.length > 50){
 		input.style.backgroundColor = "red";
 	}
-	
+	 	
 	
 };
 
